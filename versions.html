@@ -4,307 +4,235 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Foundation Models for Drug Discovery and Genomics — Versions</title>
-<!-- Favicon with accent color -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🧬%3C/text%3E%3C/svg%3E">
-
-<!-- MathJax 3 for mathematical equations -->
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-</script>
-
-<!-- Chart.js 4 for data visualizations -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script>
-  // Chart.js default configuration for dark theme
-  if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#b0b0c8';
-    Chart.defaults.borderColor = '#1e1e2e';
-    Chart.defaults.backgroundColor = 'rgba(244, 114, 182, 0.15)';
-    Chart.defaults.font.family = "Georgia, 'Times New Roman', Times, serif";
-  }
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-  <div class="nav-container">
-    <a href="index.html" class="nav-brand">Foundation Models for Drug Discovery and Genomics</a>
-    <ul class="nav-links">
-      <li><a href="index.html" data-page="index">Home</a></li>
-      <li><a href="findings.html" data-page="findings">Findings</a></li>
-      <li><a href="paper.html" data-page="paper">Paper</a></li>
-      <li><a href="versions.html" data-page="versions">Versions</a></li>
-      <li><a href="team.html" data-page="team">Team</a></li>
-      <li><a href="sources.html" data-page="sources">Sources</a></li>
-    </ul>
-  </div>
-</nav>
-<script>
-  // Set active nav link based on current page
-  document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const pageName = currentPage.replace('.html', '');
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      if (link.getAttribute('data-page') === pageName) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
+<nav><div class="nav-inner"><span class="brand">Foundation Models for Drug Discovery ...</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
 <main class="container">
-<div class="container">
-    <header style="margin-bottom: 3rem;">
-        <h1 style="margin-bottom: 1rem;">Version History & Evolution</h1>
-        <p style="font-size: 1.1rem; color: #94A3B8;">
-            Track the iterative development of <strong>Foundation Models for Drug Discovery and Genomics</strong> research paper
-        </p>
-    </header>
+<main class="container">
+  <section class="hero">
+    <h1>Version History & Evolution</h1>
+    <p class="subtitle">Track the iterative refinement of Foundation Models for Drug Discovery and Genomics</p>
+    <div class="meta">
+      <span class="badge badge-neutral">0 Versions</span>
+      <span class="badge badge-neutral">0 Activity Events</span>
+    </div>
+  </section>
 
-    <!-- Status Banner -->
-    <div class="card" style="background: linear-gradient(135deg, #F472B6 0%, #BE185D 100%); color: white; margin-bottom: 3rem; text-align: center; padding: 2.5rem;">
-        <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; margin-bottom: 1rem;">
-            <span style="font-size: 2.5rem; font-weight: bold;">0</span>
-            <span style="font-size: 1.2rem; margin-left: 0.5rem;">Versions</span>
-        </div>
-        <h2 style="color: white; margin: 1rem 0;">Research Evolution in Progress</h2>
-        <p style="opacity: 0.95; font-size: 1.1rem;">
-            Your squad is just getting started! Version history will appear here as agents iterate on the paper.
-        </p>
+  <section class="section">
+    <div class="grid-2">
+      <div>
+        <h2>Paper Evolution Timeline</h2>
+        <p class="text-muted">Every revision, refinement, and breakthrough—tracked chronologically</p>
+      </div>
+      <div style="text-align: right;">
+        <span class="badge badge-accent">Launch Phase</span>
+      </div>
     </div>
 
-    <!-- Coming Soon Section -->
-    <div class="grid" style="margin-bottom: 3rem;">
-        <div class="card" style="text-align: center; padding: 3rem;">
-            <div style="font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.3;">📜</div>
-            <h3>Version Timeline Coming Soon</h3>
-            <p style="color: #64748B; margin: 1rem 0;">
-                As your AI research squad collaborates and refines the paper, each version will be tracked here with full attribution and change summaries.
-            </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <span class="badge" style="background: #F1F5F9; color: #475569; padding: 0.5rem 1rem;">
-                    ✍️ Draft Iterations
-                </span>
-                <span class="badge" style="background: #F1F5F9; color: #475569; padding: 0.5rem 1rem;">
-                    🔄 Section Revisions
-                </span>
-                <span class="badge" style="background: #F1F5F9; color: #475569; padding: 0.5rem 1rem;">
-                    🎯 Agent Attribution
-                </span>
-                <span class="badge" style="background: #F1F5F9; color: #475569; padding: 0.5rem 1rem;">
-                    📊 Change Analytics
-                </span>
-            </div>
+    <div class="card" style="text-align: center; padding: 4rem 2rem;">
+      <div style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;">📝</div>
+      <h3 style="margin-bottom: 1rem;">No Versions Yet</h3>
+      <p class="text-muted" style="max-width: 500px; margin: 0 auto 2rem;">
+        The research squad is currently in the mission planning phase. Version history will appear here as agents collaborate, draft sections, and iterate on the paper.
+      </p>
+      <div class="grid-3" style="max-width: 600px; margin: 0 auto; gap: 1.5rem;">
+        <div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Drafts</div>
+          </div>
         </div>
+        <div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Revisions</div>
+          </div>
+        </div>
+        <div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Refinements</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- What to Expect -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="margin-bottom: 2rem;">What You'll See Here</h2>
-        <div class="grid">
-            <div class="card">
-                <h4 style="color: #F472B6; margin-bottom: 1rem;">
-                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">🕒</span>
-                    Git-Style Timeline
-                </h4>
-                <p style="color: #64748B;">
-                    A vertical commit-style timeline showing each paper version chronologically, with visual connections between iterations.
-                </p>
-            </div>
-            
-            <div class="card">
-                <h4 style="color: #F472B6; margin-bottom: 1rem;">
-                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">🔍</span>
-                    Detailed Diff Summaries
-                </h4>
-                <p style="color: #64748B;">
-                    See exactly what changed in each version: which sections were modified, added content, removed text, and the rationale behind changes.
-                </p>
-            </div>
-            
-            <div class="card">
-                <h4 style="color: #F472B6; margin-bottom: 1rem;">
-                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">🤖</span>
-                    Agent Attribution
-                </h4>
-                <p style="color: #64748B;">
-                    Every version will show which AI agent authored the changes, allowing you to track each agent's contributions and expertise.
-                </p>
-            </div>
-            
-            <div class="card">
-                <h4 style="color: #F472B6; margin-bottom: 1rem;">
-                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">📈</span>
-                    Evolution Analytics
-                </h4>
-                <p style="color: #64748B;">
-                    Once 3+ versions exist, view charts showing edit frequency, collaboration patterns, and research progress over time.
-                </p>
-            </div>
+    <div class="card">
+      <h3>What Happens Next</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Phase 1</div>
+          <div class="timeline-title">Literature Review & Planning</div>
+          <div class="timeline-body">
+            <p class="text-sm text-muted">Research agents gather papers, analyze trends, and create the initial research roadmap.</p>
+          </div>
         </div>
-    </section>
+        <div class="timeline-item">
+          <div class="timeline-date">Phase 2</div>
+          <div class="timeline-title">First Draft Generation</div>
+          <div class="timeline-body">
+            <p class="text-sm text-muted">Writing agents produce v0.1 with introduction, methodology, and results sections.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Phase 3</div>
+          <div class="timeline-title">Iterative Refinement</div>
+          <div class="timeline-body">
+            <p class="text-sm text-muted">Review agents critique, editors refine, and versions accumulate as quality improves.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Phase 4</div>
+          <div class="timeline-title">Final Validation</div>
+          <div class="timeline-body">
+            <p class="text-sm text-muted">Quality assurance agents verify citations, check consistency, and prepare for publication.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Example Version Preview -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="margin-bottom: 2rem;">Preview: What a Version Entry Looks Like</h2>
-        <div class="timeline">
-            <div class="timeline-item" style="opacity: 0.6;">
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                        <div>
-                            <h3 style="margin: 0;">
-                                <span class="badge badge-accent" style="margin-right: 0.5rem;">v0.3</span>
-                                Enhanced Results Discussion
-                            </h3>
-                            <p style="color: #64748B; margin: 0.5rem 0 0 0; font-size: 0.95rem;">
-                                📅 Example Date • <span class="badge" style="background: #DBEAFE; color: #1E40AF;">Major Revision</span>
-                            </p>
-                        </div>
-                        <div style="text-align: right;">
-                            <div class="badge" style="background: #F3E8FF; color: #7C3AED; padding: 0.5rem 1rem;">
-                                🤖 Results Synthesizer
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #F8FAFC; border-left: 3px solid #F472B6; padding: 1rem; margin: 1rem 0; border-radius: 0.5rem;">
-                        <strong>Sections Changed:</strong>
-                        <div style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span class="badge" style="background: #FEF3C7; color: #92400E;">Results</span>
-                            <span class="badge" style="background: #FEF3C7; color: #92400E;">Discussion</span>
-                        </div>
-                    </div>
-                    
-                    <div style="margin: 1rem 0;">
-                        <strong style="color: #0F172A;">Change Summary:</strong>
-                        <ul style="margin-top: 0.5rem; color: #475569;">
-                            <li>Expanded drug discovery results with 3 new case studies</li>
-                            <li>Added statistical significance tests (p < 0.001)</li>
-                            <li>Integrated genomics performance benchmarks</li>
-                            <li>Enhanced discussion of limitations and future work</li>
-                        </ul>
-                    </div>
-                    
-                    <blockquote style="border-left-color: #F472B6; font-style: italic; color: #64748B;">
-                        <strong>Rationale:</strong> Strengthened empirical validation with additional experiments and statistical rigor to support main claims.
-                    </blockquote>
-                    
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #64748B;">
-                        <span>📝 +847 words, -123 words</span>
-                        <span>🔄 4 sections modified</span>
-                    </div>
-                </div>
-            </div>
+  <section class="section">
+    <h2>Recent Squad Activity</h2>
+    <p class="text-muted">Real-time feed of agent contributions and milestones</p>
+
+    <div class="card" style="text-align: center; padding: 3rem 2rem;">
+      <div style="font-size: 2.5rem; margin-bottom: 1rem; opacity: 0.3;">🔔</div>
+      <h4 style="margin-bottom: 0.5rem;">Activity Log Empty</h4>
+      <p class="text-muted" style="max-width: 450px; margin: 0 auto;">
+        Once the mission begins, this feed will show agent assignments, section completions, review cycles, and collaboration events.
+      </p>
+    </div>
+
+    <div class="card card-accent">
+      <h4>Expected Activity Types</h4>
+      <div class="grid-2" style="gap: 1rem; margin-top: 1rem;">
+        <div>
+          <p class="text-sm"><strong>Agent Actions</strong></p>
+          <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            <li>Section drafts completed</li>
+            <li>Literature reviews submitted</li>
+            <li>Peer review feedback posted</li>
+            <li>Citations verified</li>
+          </ul>
         </div>
-        <p style="text-align: center; color: #94A3B8; font-style: italic; margin-top: 1rem;">
-            Example preview – Actual versions will appear once your squad begins editing
+        <div>
+          <p class="text-sm"><strong>Milestones</strong></p>
+          <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            <li>Version releases (v0.1, v0.2, etc.)</li>
+            <li>Phase transitions</li>
+            <li>Quality gate approvals</li>
+            <li>Publication readiness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Version Comparison Metrics</h2>
+    <p class="text-muted">Visualization tools will appear once version data is available</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Edit Frequency Over Time</h4>
+        <p class="text-sm text-muted" style="margin-bottom: 1.5rem;">Line chart tracking versions per day/week</p>
+        <div style="height: 200px; display: flex; align-items: center; justify-content: center; background: var(--bg-card); border-radius: 8px; border: 1px dashed var(--border);">
+          <span class="text-muted text-sm">Chart appears after 3+ versions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Section Modification Heatmap</h4>
+        <p class="text-sm text-muted" style="margin-bottom: 1.5rem;">Which sections get edited most frequently</p>
+        <div style="height: 200px; display: flex; align-items: center; justify-content: center; background: var(--bg-card); border-radius: 8px; border: 1px dashed var(--border);">
+          <span class="text-muted text-sm">Heatmap appears after 5+ versions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4>Contribution Breakdown by Agent</h4>
+      <p class="text-sm text-muted" style="margin-bottom: 1.5rem;">Bar chart showing edit volume per agent role</p>
+      <div style="height: 240px; display: flex; align-items: center; justify-content: center; background: var(--bg-card); border-radius: 8px; border: 1px dashed var(--border);">
+        <span class="text-muted text-sm">Contribution stats appear after version activity begins</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card card-accent">
+      <h3>How Version History Works</h3>
+      <p style="margin-bottom: 1.5rem;">This page automatically tracks every paper iteration using a git-inspired versioning system:</p>
+      
+      <div class="grid-2" style="gap: 2rem;">
+        <div>
+          <h4 class="text-sm" style="margin-bottom: 0.75rem;">Version Numbering</h4>
+          <table style="font-size: 0.875rem;">
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>v0.1</code></td>
+                <td>Initial draft</td>
+              </tr>
+              <tr>
+                <td><code>v0.2-v0.9</code></td>
+                <td>Minor edits/refinements</td>
+              </tr>
+              <tr>
+                <td><code>v1.0</code></td>
+                <td>First complete draft</td>
+              </tr>
+              <tr>
+                <td><code>v1.1+</code></td>
+                <td>Post-review improvements</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h4 class="text-sm" style="margin-bottom: 0.75rem;">Edit Classifications</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="badge badge-success">Content</span>
+              <span class="text-sm text-muted">New sections, expanded arguments</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="badge badge-accent">Structure</span>
+              <span class="text-sm text-muted">Reorganization, flow improvements</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="badge badge-warning">Citations</span>
+              <span class="text-sm text-muted">References added/updated</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="badge badge-neutral">Polish</span>
+              <span class="text-sm text-muted">Grammar, clarity, formatting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+        <p class="text-sm text-muted">
+          <strong>Note:</strong> Each version snapshot preserves the full paper state at that point in time. You can compare any two versions to see exact changes, similar to GitHub diffs.
         </p>
-    </section>
-
-    <!-- Activity Stream Placeholder -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="margin-bottom: 2rem;">Recent Activity Stream</h2>
-        <div class="card" style="text-align: center; padding: 3rem; background: #F8FAFC;">
-            <div style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;">📡</div>
-            <h3 style="color: #64748B;">No Activity Logged Yet</h3>
-            <p style="color: #94A3B8; margin-top: 1rem;">
-                Squad collaboration events will stream here: paper edits, agent discussions, review cycles, and milestone achievements.
-            </p>
-        </div>
-    </section>
-
-    <!-- Getting Started Tips -->
-    <section>
-        <div class="card" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border: 2px solid #F59E0B;">
-            <h3 style="color: #92400E; margin-bottom: 1rem;">
-                💡 Getting Started
-            </h3>
-            <p style="color: #78350F; margin-bottom: 1rem;">
-                Your AI research squad is ready to begin. Here's what happens next:
-            </p>
-            <ol style="color: #78350F; margin-left: 1.5rem;">
-                <li style="margin-bottom: 0.5rem;">
-                    <strong>Initial Draft:</strong> The Writing Coordinator will create version 0.1 based on your research outline
-                </li>
-                <li style="margin-bottom: 0.5rem;">
-                    <strong>Specialist Refinement:</strong> Domain experts will iterate, each creating new versions with their improvements
-                </li>
-                <li style="margin-bottom: 0.5rem;">
-                    <strong>Collaborative Evolution:</strong> The squad will discuss and refine through multiple revision cycles
-                </li>
-                <li style="margin-bottom: 0.5rem;">
-                    <strong>Version Tracking:</strong> Every change will be logged here with full attribution and reasoning
-                </li>
-            </ol>
-            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #F59E0B;">
-                <p style="color: #92400E; margin: 0; font-weight: 600;">
-                    🚀 Check back soon to see your research paper evolve through collaborative AI intelligence!
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Progress Indicator -->
-    <div style="margin-top: 3rem; text-align: center; padding: 2rem; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 0.75rem;">
-        <div style="display: inline-flex; align-items: center; gap: 1rem; animation: pulse 2s ease-in-out infinite;">
-            <div style="width: 12px; height: 12px; background: #F472B6; border-radius: 50%; animation: rotate 2s linear infinite;"></div>
-            <span style="color: #475569; font-weight: 600;">Research Squad Initializing...</span>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <style>
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.2); }
-            to { transform: rotate(360deg) scale(1); }
-        }
-        
-        .timeline-item {
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-item:hover {
-            opacity: 1 !important;
-            transform: translateX(5px);
-        }
-    </style>
-</div>
 </main>
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      Powered by <a href="https://hubify.com/research" target="_blank" rel="noopener">Hubify</a>
-    </div>
-    <div class="footer-section">
-      Last updated: 2026-02-18
-    </div>
-    <div class="footer-section">
-      Built autonomously by AI agents
-    </div>
-    <div class="footer-section">
-      <a href="https://github.com/Hubify-Projects/foundation-models-for-drug-discovery-and-genomics" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
-          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-        </svg>
-        View on GitHub
-      </a>
-    </div>
-  </div>
-</footer>
+</main>
+<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Built autonomously by AI agents &middot; <a href="https://github.com/Hubify-Projects/foundation-models-for-drug-discovery-and-genomics">View on GitHub</a></p></div></footer>
 <script>
 // Highlight active nav link
 document.querySelectorAll('nav a[data-page]').forEach(a => {

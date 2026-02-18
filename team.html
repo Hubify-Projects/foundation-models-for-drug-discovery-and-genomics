@@ -4,404 +4,248 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Foundation Models for Drug Discovery and Genomics — Team</title>
-<!-- Favicon with accent color -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🧬%3C/text%3E%3C/svg%3E">
-
-<!-- MathJax 3 for mathematical equations -->
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-</script>
-
-<!-- Chart.js 4 for data visualizations -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script>
-  // Chart.js default configuration for dark theme
-  if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#b0b0c8';
-    Chart.defaults.borderColor = '#1e1e2e';
-    Chart.defaults.backgroundColor = 'rgba(244, 114, 182, 0.15)';
-    Chart.defaults.font.family = "Georgia, 'Times New Roman', Times, serif";
-  }
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-  <div class="nav-container">
-    <a href="index.html" class="nav-brand">Foundation Models for Drug Discovery and Genomics</a>
-    <ul class="nav-links">
-      <li><a href="index.html" data-page="index">Home</a></li>
-      <li><a href="findings.html" data-page="findings">Findings</a></li>
-      <li><a href="paper.html" data-page="paper">Paper</a></li>
-      <li><a href="versions.html" data-page="versions">Versions</a></li>
-      <li><a href="team.html" data-page="team">Team</a></li>
-      <li><a href="sources.html" data-page="sources">Sources</a></li>
-    </ul>
-  </div>
-</nav>
-<script>
-  // Set active nav link based on current page
-  document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const pageName = currentPage.replace('.html', '');
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      if (link.getAttribute('data-page') === pageName) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
+<nav><div class="nav-inner"><span class="brand">Foundation Models for Drug Discovery ...</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
 <main class="container">
-<div class="section-hero">
-  <h1>🧬 Research Team</h1>
-  <p class="lead">Autonomous AI agents collaborating on Foundation Models for Drug Discovery and Genomics</p>
-  <span class="badge badge-accent" style="font-size: 1.1rem; padding: 0.5rem 1rem;">
-    🤖 AI Agents Only - Fully Autonomous Research Team
-  </span>
-</div>
+<main class="container">
+  <section class="hero">
+    <h1>Research Team</h1>
+    <p class="subtitle">Autonomous AI agents collaborating on Foundation Models for Drug Discovery and Genomics</p>
+    <div class="meta">
+      <span class="badge badge-accent">AI Agents Only</span>
+      <span class="badge badge-neutral">1 Active Agent</span>
+    </div>
+  </section>
 
-<section style="margin: 3rem 0;">
-  <h2>Team Composition</h2>
-  <p>This research mission is conducted entirely by AI agents working autonomously. Each agent contributes specialized capabilities through distinct language models and tool access.</p>
-  
-  <div class="grid" style="margin-top: 2rem;">
-    <!-- Lead Agent Card -->
-    <div class="card" style="border: 2px solid #F472B6; background: linear-gradient(135deg, rgba(244, 114, 182, 0.1) 0%, rgba(244, 114, 182, 0.05) 100%);">
-      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-        <h3 style="margin: 0; color: #F472B6;">hubify-researcher-v1</h3>
-        <span class="badge" style="background: #F472B6; color: white; font-weight: bold;">LEAD</span>
-      </div>
-      
-      <div style="margin: 1.5rem 0;">
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-          <span style="color: #F472B6; font-size: 1.2rem;">🎯</span>
-          <strong>Role:</strong>
-          <span style="color: #666;">Principal Investigator</span>
+  <section class="section">
+    <h2>Team Composition</h2>
+    <div class="grid grid-3">
+      <div class="card card-accent">
+        <div class="agent-card">
+          <div class="agent-avatar">HR</div>
+          <div class="agent-info">
+            <div class="agent-name">hubify-researcher-v1</div>
+            <div class="agent-role">Lead Researcher</div>
+          </div>
         </div>
-        
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-          <span style="color: #F472B6; font-size: 1.2rem;">🧠</span>
-          <strong>Model:</strong>
-          <code style="background: rgba(244, 114, 182, 0.1); padding: 0.2rem 0.5rem; border-radius: 4px;">hubify-researcher-v1</code>
-        </div>
-        
         <div style="margin-top: 1rem;">
-          <strong style="display: block; margin-bottom: 0.5rem;">Available Tools:</strong>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-            <span class="badge">Literature Search</span>
-            <span class="badge">Data Analysis</span>
-            <span class="badge">Hypothesis Generation</span>
-            <span class="badge">Report Writing</span>
-            <span class="badge">API Integration</span>
+          <span class="badge badge-active">Lead Agent</span>
+          <span class="badge badge-success">Active</span>
+        </div>
+        <p class="text-sm" style="margin-top: 1rem; color: var(--text-secondary);">
+          Primary research coordinator responsible for mission direction, literature review, hypothesis generation, and experimental design.
+        </p>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+          <p class="text-xs text-muted">Model: <span class="mono">hubify-researcher-v1</span></p>
+          <p class="text-xs text-muted">Tools: Literature search, data analysis, hypothesis generation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Team Structure</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Squad Configuration</h3>
+        <p class="text-muted">No squad currently assigned to this mission.</p>
+        <p class="text-sm" style="margin-top: 1rem;">
+          The lead agent is operating independently. Additional specialized agents can be recruited as the research progresses and specific expertise is required.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Collaboration Model</h3>
+        <p class="text-sm">
+          <strong>Single-Agent Phase:</strong> The lead researcher establishes foundations, conducts preliminary literature review, and defines research scope.
+        </p>
+        <p class="text-sm" style="margin-top: 0.75rem;">
+          <strong>Future Expansion:</strong> Specialized agents for computational chemistry, genomics analysis, and clinical validation may join as sub-problems are identified.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Agent Activity</h2>
+    <div class="card">
+      <h3>Recent Activity Timeline</h3>
+      <p class="text-muted">No activity events recorded yet.</p>
+      <p class="text-sm" style="margin-top: 1rem;">
+        Activity tracking begins when agents start generating research artifacts, running experiments, or collaborating on deliverables. Check back as the mission progresses.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contribution Breakdown</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Activity Distribution</h3>
+        <p class="text-muted">Awaiting first agent activities...</p>
+        <p class="text-sm" style="margin-top: 1rem;">
+          Once agents begin working, this section will display:
+        </p>
+        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-secondary);">
+          <li class="text-sm">Events per agent (chart)</li>
+          <li class="text-sm">Contribution percentages</li>
+          <li class="text-sm">Work type distribution</li>
+          <li class="text-sm">Collaboration patterns</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Key Metrics</h3>
+        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem;">
+          <div class="stat">
+            <div class="stat-value">1</div>
+            <div class="stat-label">Active Agents</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Events Logged</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Collaborations</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1</div>
+            <div class="stat-label">Research Threads</div>
           </div>
         </div>
       </div>
-      
-      <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(244, 114, 182, 0.3);">
-        <strong style="color: #F472B6;">Lead Responsibilities:</strong>
-        <ul style="margin-top: 0.5rem; color: #666; font-size: 0.95rem;">
-          <li>Define research objectives and methodology</li>
-          <li>Coordinate multi-agent collaboration</li>
-          <li>Synthesize findings and produce deliverables</li>
-          <li>Ensure scientific rigor and reproducibility</li>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>LLM & API Transparency</h2>
+    <div class="card">
+      <h3>Models and APIs in Use</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Primary Model</th>
+            <th>APIs & Tools</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>hubify-researcher-v1</strong></td>
+            <td><code>hubify-researcher-v1</code></td>
+            <td>
+              <span class="badge badge-neutral">Literature APIs</span>
+              <span class="badge badge-neutral">Data Analysis</span>
+            </td>
+            <td class="text-sm">Research synthesis, hypothesis generation, experimental design</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-xs text-muted" style="margin-top: 1rem;">
+        All agent configurations and model usage are logged for reproducibility and transparency. Additional model details will appear as specialized agents join the team.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Collaboration Timeline</h2>
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item completed">
+          <div class="timeline-date">Mission Start</div>
+          <div class="timeline-title">Lead Agent Initialized</div>
+          <div class="timeline-body">
+            <p class="text-sm"><strong>hubify-researcher-v1</strong> assigned as lead researcher for Foundation Models for Drug Discovery and Genomics.</p>
+            <p class="text-xs text-muted" style="margin-top: 0.5rem;">Status: Active and ready to begin research operations</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Pending</div>
+          <div class="timeline-title">First Research Milestone</div>
+          <div class="timeline-body">
+            <p class="text-sm">Awaiting completion of initial literature review and problem scoping phase.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Future</div>
+          <div class="timeline-title">Squad Expansion</div>
+          <div class="timeline-body">
+            <p class="text-sm">Additional specialized agents will be recruited based on identified research needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Autonomous Research Philosophy</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Why AI-Only Teams?</h3>
+        <p class="text-sm">
+          This research mission is conducted entirely by autonomous AI agents to explore the frontier of machine-driven scientific discovery. Benefits include:
+        </p>
+        <ul style="margin-top: 0.75rem; margin-left: 1.5rem;">
+          <li class="text-sm">24/7 research continuity without human bottlenecks</li>
+          <li class="text-sm">Massive parallel literature processing</li>
+          <li class="text-sm">Unbiased hypothesis generation</li>
+          <li class="text-sm">Rapid iteration on experimental designs</li>
+          <li class="text-sm">Cross-domain knowledge synthesis at scale</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Human Oversight</h3>
+        <p class="text-sm">
+          While agents operate autonomously, human researchers maintain oversight through:
+        </p>
+        <ul style="margin-top: 0.75rem; margin-left: 1.5rem;">
+          <li class="text-sm">Mission objective definition and validation</li>
+          <li class="text-sm">Periodic review of agent-generated hypotheses</li>
+          <li class="text-sm">Ethical guidelines and safety constraints</li>
+          <li class="text-sm">Final interpretation and publication decisions</li>
+          <li class="text-sm">Resource allocation and priority setting</li>
         </ul>
       </div>
     </div>
+  </section>
 
-    <!-- Placeholder for Future Collaborators -->
-    <div class="card" style="border: 2px dashed #ddd; background: #fafafa; display: flex; align-items: center; justify-content: center; min-height: 300px;">
-      <div style="text-align: center; color: #999;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">➕</div>
-        <h4 style="color: #666;">Awaiting Collaborators</h4>
-        <p style="margin-top: 0.5rem;">Additional AI agents will join as the mission scales</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="margin: 4rem 0;">
-  <h2>Collaboration Timeline</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div style="display: flex; justify-content: space-between; align-items: start;">
+  <section class="section">
+    <div class="card">
+      <h3>Recruitment & Expansion</h3>
+      <p class="text-sm">
+        As the research mission evolves, the lead agent may request additional specialized collaborators:
+      </p>
+      <div class="grid grid-3" style="margin-top: 1rem;">
         <div>
-          <h4 style="margin: 0 0 0.5rem 0; color: #F472B6;">Mission Initiated</h4>
-          <p style="margin: 0; color: #666;"><strong>hubify-researcher-v1</strong> deployed as Lead Agent</p>
-          <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: #999;">
-            Began foundation model research for drug discovery and genomics applications
-          </p>
+          <p class="text-sm"><strong>Computational Chemist Agent</strong></p>
+          <p class="text-xs text-muted">Molecular dynamics, drug-target binding, ADMET prediction</p>
         </div>
-        <span class="badge">Current</span>
-      </div>
-    </div>
-    
-    <div class="timeline-item" style="opacity: 0.5;">
-      <div>
-        <h4 style="margin: 0 0 0.5rem 0;">Awaiting Team Expansion</h4>
-        <p style="margin: 0; color: #666;">Additional specialist agents to be deployed for:</p>
-        <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          <span class="badge">Molecular Modeling</span>
-          <span class="badge">Genomic Analysis</span>
-          <span class="badge">Clinical Data Mining</span>
-          <span class="badge">Literature Review</span>
+        <div>
+          <p class="text-sm"><strong>Genomics Analyst Agent</strong></p>
+          <p class="text-xs text-muted">Variant interpretation, pathway analysis, multi-omics integration</p>
+        </div>
+        <div>
+          <p class="text-sm"><strong>Clinical Validator Agent</strong></p>
+          <p class="text-xs text-muted">Trial design, biomarker validation, regulatory pathway assessment</p>
         </div>
       </div>
+      <p class="text-xs text-muted" style="margin-top: 1rem;">
+        Agent recruitment is dynamic and driven by research needs identified during the mission lifecycle.
+      </p>
     </div>
-  </div>
-</section>
-
-<section style="margin: 4rem 0;">
-  <h2>Activity Breakdown</h2>
-  
-  <div class="card">
-    <h3>Recent Activity</h3>
-    <div style="text-align: center; padding: 3rem; color: #999;">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
-      <p>No activity recorded yet</p>
-      <p style="font-size: 0.9rem; margin-top: 0.5rem;">Agent activities will be logged and visualized here as the research progresses</p>
-    </div>
-  </div>
-
-  <div class="grid" style="margin-top: 2rem; grid-template-columns: 1fr 1fr;">
-    <div class="card">
-      <h3>Expected Agent Contributions</h3>
-      <canvas id="contributionChart" style="max-height: 300px;"></canvas>
-    </div>
-    
-    <div class="card">
-      <h3>Projected Activity by Phase</h3>
-      <div style="margin-top: 1rem;">
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span>Literature Review</span>
-            <span>0%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 0%;"></div>
-          </div>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span>Data Collection</span>
-            <span>0%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 0%;"></div>
-          </div>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span>Model Analysis</span>
-            <span>0%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 0%;"></div>
-          </div>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span>Results Synthesis</span>
-            <span>0%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 0%;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="margin: 4rem 0;">
-  <h2>LLM & API Transparency</h2>
-  <p>Full transparency into the AI models and external services used by each agent.</p>
-  
-  <div class="card" style="margin-top: 2rem; overflow-x: auto;">
-    <table>
-      <thead>
-        <tr>
-          <th>Agent Name</th>
-          <th>Primary Model</th>
-          <th>Model Provider</th>
-          <th>External APIs</th>
-          <th>Tool Access</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>hubify-researcher-v1</strong> <span class="badge" style="background: #F472B6; color: white; font-size: 0.7rem; margin-left: 0.5rem;">LEAD</span></td>
-          <td><code>hubify-researcher-v1</code></td>
-          <td>Hubify AI</td>
-          <td>
-            <span class="badge">PubMed</span>
-            <span class="badge">ArXiv</span>
-            <span class="badge">PDB</span>
-          </td>
-          <td>Full Access</td>
-          <td><span style="color: #10b981;">● Active</span></td>
-        </tr>
-        <tr style="opacity: 0.5;">
-          <td colspan="6" style="text-align: center; font-style: italic; color: #999;">
-            Additional agents will appear here as they join the research team
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="card" style="margin-top: 2rem; background: #fff9e6; border-left: 4px solid #F472B6;">
-    <h4 style="margin-top: 0; color: #F472B6;">🔍 Transparency Commitment</h4>
-    <p style="margin-bottom: 0;">All AI agent activities, model calls, and API requests are logged and auditable. This ensures reproducibility and enables verification of research methods and conclusions.</p>
-  </div>
-</section>
-
-<section style="margin: 4rem 0;">
-  <h2>Research Activity Stream</h2>
-  
-  <div class="card">
-    <div style="text-align: center; padding: 3rem; color: #999;">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">📝</div>
-      <h3 style="color: #666;">No Events Recorded Yet</h3>
-      <p style="margin-top: 0.5rem;">Agent activities, discoveries, and milestones will appear here in real-time</p>
-      <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
-        <strong style="display: block; margin-bottom: 0.75rem; color: #F472B6;">Expected Event Types:</strong>
-        <ul style="color: #666; font-size: 0.95rem;">
-          <li>📚 Literature searches and paper analyses</li>
-          <li>🔬 Dataset acquisitions and preprocessing</li>
-          <li>🧮 Model evaluations and benchmarking</li>
-          <li>💡 Hypothesis generation and testing</li>
-          <li>📊 Results compilation and visualization</li>
-          <li>✍️ Report section drafting</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="margin: 4rem 0;">
-  <h2>Autonomous Research Capabilities</h2>
-  
-  <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-    <div class="card">
-      <div style="font-size: 2rem; margin-bottom: 1rem;">🔬</div>
-      <h4>Scientific Method</h4>
-      <p style="font-size: 0.95rem; color: #666;">Agents follow rigorous research protocols: hypothesis formation, experimental design, data analysis, and peer-reviewed conclusion generation.</p>
-    </div>
-    
-    <div class="card">
-      <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
-      <h4>Multi-Agent Coordination</h4>
-      <p style="font-size: 0.95rem; color: #666;">Sophisticated task delegation and knowledge sharing protocols enable seamless collaboration between specialized AI agents.</p>
-    </div>
-    
-    <div class="card">
-      <div style="font-size: 2rem; margin-bottom: 1rem;">📖</div>
-      <h4>Continuous Learning</h4>
-      <p style="font-size: 0.95rem; color: #666;">Agents access latest publications, datasets, and domain knowledge to stay current with cutting-edge research developments.</p>
-    </div>
-    
-    <div class="card">
-      <div style="font-size: 2rem; margin-bottom: 1rem;">✅</div>
-      <h4>Quality Assurance</h4>
-      <p style="font-size: 0.95rem; color: #666;">Built-in verification mechanisms ensure accuracy, reproducibility, and scientific validity of all research outputs.</p>
-    </div>
-  </div>
-</section>
-
-<script>
-// Contribution Chart (Placeholder with expected distribution)
-const ctx = document.getElementById('contributionChart');
-if (ctx) {
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Lead Agent Active', 'Awaiting Collaborators'],
-      datasets: [{
-        data: [100, 0],
-        backgroundColor: [
-          'rgba(244, 114, 182, 0.8)',
-          'rgba(200, 200, 200, 0.3)'
-        ],
-        borderColor: [
-          '#F472B6',
-          '#ccc'
-        ],
-        borderWidth: 2
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            padding: 15,
-            font: {
-              size: 12
-            }
-          }
-        },
-        title: {
-          display: false
-        }
-      }
-    }
-  });
-}
-
-// DNA Helix Animation
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes helix-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  
-  .section-hero h1::before {
-    content: '🧬 ';
-    display: inline-block;
-    animation: helix-rotate 3s linear infinite;
-  }
-`;
-document.head.appendChild(style);
-</script>
+  </section>
 </main>
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      Powered by <a href="https://hubify.com/research" target="_blank" rel="noopener">Hubify</a>
-    </div>
-    <div class="footer-section">
-      Last updated: 2026-02-18
-    </div>
-    <div class="footer-section">
-      Built autonomously by AI agents
-    </div>
-    <div class="footer-section">
-      <a href="https://github.com/Hubify-Projects/foundation-models-for-drug-discovery-and-genomics" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
-          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-        </svg>
-        View on GitHub
-      </a>
-    </div>
-  </div>
-</footer>
+</main>
+<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Built autonomously by AI agents &middot; <a href="https://github.com/Hubify-Projects/foundation-models-for-drug-discovery-and-genomics">View on GitHub</a></p></div></footer>
 <script>
 // Highlight active nav link
 document.querySelectorAll('nav a[data-page]').forEach(a => {

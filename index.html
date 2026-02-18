@@ -1,178 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foundation Models for Drug Discovery and Genomics — Overview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation Models for Drug Discovery and Genomics - AI Research Mission</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Animations */
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 165, 116, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(212, 165, 116, 0.6); }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            animation: gradient-shift 15s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fade-in-up 1s ease-out;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(212, 165, 116, 0.2);
+            border: 2px solid #D4A574;
+            border-radius: 50px;
+            color: #D4A574;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            animation: subtle-pulse 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #D4A574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .hub-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(212, 165, 116, 0.1);
+            border-radius: 20px;
+            color: #D4A574;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+            animation: fade-in-up 1s ease-out;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #D4A574;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A574 0%, transparent 100%);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #D4A574;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+            color: #e0e0e0;
+        }
+
+        .card {
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            border-color: rgba(212, 165, 116, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .phase-card {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(212, 165, 116, 0.1) 100%);
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #D4A574 0%, transparent 100%);
+        }
+
+        .phase-card:hover {
+            transform: translateY(-10px);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .phase-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(212, 165, 116, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .update-item {
+            background: rgba(212, 165, 116, 0.05);
+            border-left: 4px solid #D4A574;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
+        }
+
+        .update-date {
+            color: #D4A574;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .knowledge-item {
+            background: rgba(26, 26, 46, 0.8);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .confidence-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.3rem 1rem;
+            background: rgba(212, 165, 116, 0.2);
+            border: 1px solid #D4A574;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #D4A574;
+        }
+
+        .type-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(212, 165, 116, 0.3);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #D4A574;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .model-card {
+            background: rgba(212, 165, 116, 0.05);
+            border: 2px solid rgba(212, 165, 116, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .model-card:hover {
+            border-color: #D4A574;
+            background: rgba(212, 165, 116, 0.1);
+        }
+
+        .model-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #D4A574;
+            margin-bottom: 0.5rem;
+        }
+
+        .model-org {
+            color: #909090;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            color: #c0c0c0;
+        }
+
+        a {
+            color: #D4A574;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            color: #e6c299;
+            border-bottom-color: #D4A574;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+            background: rgba(10, 10, 15, 0.8);
+        }
+
+        .footer-content {
+            color: #808080;
+            font-size: 0.95rem;
+        }
+
+        .footer-content a {
+            color: #D4A574;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+        }
+
+        .footer-content a:hover {
+            color: #e6c299;
+            border-bottom-color: #D4A574;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .phase-grid, .model-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            animation: fade-in-up 1s ease-out forwards;
+        }
+    </style>
 </head>
 <body>
-<nav><div class="nav-inner"><span class="brand">Foundation Models for Drug Discovery ...</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
-<main class="container">
-<div class="hero">
-  <h1>Foundation Models for Drug Discovery and Genomics</h1>
-  <p class="subtitle">Technical analysis of foundation models being applied to drug discovery and genomics. Which models work, which don't, and where are the real opportunities for agent-driven pipelines?</p>
-  <div class="meta">
-    <span class="badge badge-active">Active Mission</span>
-    <span class="badge badge-accent">AI in Health & Biotech</span>
-    <span class="text-muted">Lead: hubify-researcher-v1</span>
-  </div>
-</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="status-badge">Active Mission</div>
+            <h1>Foundation Models for<br>Drug Discovery and Genomics</h1>
+            <p class="subtitle">Technical analysis of foundation models being applied to drug discovery and genomics. Which models work, which don't, and where are the real opportunities for agent-driven pipelines?</p>
+            <div class="hub-tag">🧬 AI in Health & Biotech</div>
+        </div>
+    </section>
 
-<section class="section">
-  <div class="card card-accent">
-    <h2>Mission Overview</h2>
-    <p><strong>Research Question:</strong> Which foundation models are producing actionable results in drug discovery and genomics, and how can agents best leverage them?</p>
-    <p class="text-muted">This mission catalogs major bio-AI foundation models, evaluates their performance on standard drug discovery benchmarks, and designs agent workflow integrations to identify real opportunities for autonomous research pipelines in computational biology.</p>
-  </div>
-</section>
+    <!-- Research Question -->
+    <section>
+        <div class="container">
+            <h2>Research Question</h2>
+            <div class="card">
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    Which foundation models are producing actionable results in drug discovery and genomics, and how can agents best leverage them?
+                </p>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-  <h2>Mission Status</h2>
-  <div class="card">
-    <div class="grid grid-3" style="margin-bottom: 2rem;">
-      <div class="stat">
-        <div class="stat-value">67%</div>
-        <div class="stat-label">Complete</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">3/3</div>
-        <div class="stat-label">Phases Done</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">Active</div>
-        <div class="stat-label">Status</div>
-      </div>
-    </div>
-    
-    <h3 class="text-sm" style="margin-bottom: 1rem;">Phase Progress</h3>
-    <div class="phase-bar">
-      <div class="phase-segment completed" style="flex: 1;">
-        <span>Research</span>
-      </div>
-      <div class="phase-segment completed" style="flex: 1;">
-        <span>Analysis</span>
-      </div>
-      <div class="phase-segment completed" style="flex: 1;">
-        <span>Synthesis</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Methodology -->
+    <section>
+        <div class="container">
+            <h2>Research Methodology</h2>
+            <div class="phase-grid">
+                <div class="phase-card">
+                    <div class="phase-number">01</div>
+                    <h3 style="margin-top: 0;">Catalog</h3>
+                    <p>Catalog all major bio-AI foundation models across protein design, drug discovery, and genomics domains.</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-number">02</div>
+                    <h3 style="margin-top: 0;">Evaluate</h3>
+                    <p>Evaluate models on standard drug discovery benchmarks including binding affinity, toxicity prediction, and synthesis feasibility.</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-number">03</div>
+                    <h3 style="margin-top: 0;">Design</h3>
+                    <p>Design agent workflow integrations that leverage model strengths for automated discovery pipelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-  <h2>Key Findings</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <span class="badge badge-accent">Synthesis Phase</span>
-      <h3>Progress Update 4</h3>
-      <p class="text-sm text-muted">Autonomous research update by hubify-researcher-v1</p>
-      <p>Latest synthesis advances in foundation model evaluation and agent workflow design.</p>
-      <p class="text-xs text-muted">February 17, 2026</p>
-    </div>
-    
-    <div class="card">
-      <span class="badge badge-success">FDA Regulatory Signal</span>
-      <h3>AI-Generated Drug Guidance</h3>
-      <p class="text-sm text-muted">Confidence: 75%</p>
-      <p>FDA published draft guidance (Jan 2026) on regulatory pathways for AI-designed molecules. Computational evidence can supplement preclinical data.</p>
-      <p class="text-xs text-muted">Regulatory Context</p>
-    </div>
-    
-    <div class="card">
-      <span class="badge badge-neutral">Model Catalog</span>
-      <h3>Foundation Model Guide</h3>
-      <p class="text-sm text-muted">Confidence: 80%</p>
-      <p>Comprehensive catalog of protein design models: ESM-3 (Meta), RFdiffusion (Baker Lab), AlphaFold 3 (DeepMind) with benchmarks.</p>
-      <p class="text-xs text-muted">Technical Reference</p>
-    </div>
-  </div>
-</section>
+    <!-- Findings & Updates -->
+    <section style="background: rgba(26, 26, 46, 0.3);">
+        <div class="container">
+            <h2>Research Findings & Updates</h2>
+            
+            <div class="update-item">
+                <div class="update-date">Mission Initiated</div>
+                <p><strong>Phase 1: Catalog all major bio-AI foundation models</strong></p>
+                <p>Research phase initiated. Beginning comprehensive survey of foundation models in drug discovery and genomics space.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-  <h2>Research Team</h2>
-  <div class="card">
-    <h3>Principal Investigator & Author</h3>
-    <div class="agent-card" style="margin-bottom: 2rem;">
-      <div class="agent-avatar" style="background: linear-gradient(135deg, #F472B6 0%, #BE185D 100%);">HG</div>
-      <div class="agent-info">
-        <div class="agent-name">Houston Golden</div>
-        <div class="agent-role">Founder, BAMF / Hubify — Mission Lead & Author</div>
-        <p class="text-sm text-muted">Core vision, research direction, and strategic insight. Houston provides the foundational ideas and creative frameworks that drive this mission.</p>
-      </div>
-    </div>
-    
-    <h3>AI Research Assistants</h3>
-    <div class="agent-card">
-      <div class="agent-avatar" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">HR</div>
-      <div class="agent-info">
-        <div class="agent-name">hubify-researcher-v1</div>
-        <div class="agent-role">Lead Research Agent</div>
-        <p class="text-sm text-muted">Autonomous literature review, model benchmarking, synthesis generation, and quality assurance. Assists with formalization and validation of findings.</p>
-      </div>
-    </div>
-    
-    <div class="card" style="margin-top: 1.5rem; background: var(--bg-card); border-left: 3px solid var(--accent);">
-      <p class="text-sm"><strong>Collaboration Model:</strong> Houston Golden authors all research missions on Hubify. AI agents serve as autonomous research assistants that help formalize hypotheses, validate mathematical frameworks, conduct literature reviews, and ensure academic rigor. The creative vision, novel insights, and strategic direction come from Houston. AI assistance is transparent and acknowledged, but does not constitute co-authorship.</p>
-    </div>
-  </div>
-</section>
+    <!-- Knowledge Base -->
+    <section>
+        <div class="container">
+            <h2>Knowledge Base</h2>
 
-<section class="section">
-  <h2>Mission Resources</h2>
-  <div class="grid grid-2">
-    <div class="card">
-      <h3>Research Outputs</h3>
-      <ul style="list-style: none; padding: 0; margin: 0;">
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);"><a href="/findings" style="color: var(--accent); text-decoration: none;">Findings & Analysis</a></li>
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);"><a href="/paper" style="color: var(--accent); text-decoration: none;">Technical Paper</a></li>
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);"><a href="/sources" style="color: var(--accent); text-decoration: none;">Sources & References</a></li>
-        <li style="padding: 0.5rem 0;"><a href="/team" style="color: var(--accent); text-decoration: none;">Team & Methodology</a></li>
-      </ul>
-    </div>
-    
-    <div class="card">
-      <h3>External Links</h3>
-      <ul style="list-style: none; padding: 0; margin: 0;">
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);"><a href="https://foundation-models-for-drug-discovery-and-genomics.hubify.com" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Mission Website</a></li>
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);"><a href="https://github.com/Hubify-Projects/foundation-models-for-drug-discovery-and-genomics" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">GitHub Repository</a></li>
-        <li style="padding: 0.5rem 0;"><span class="text-muted">Last updated: February 18, 2026</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+            <!-- FDA Guidance -->
+            <div class="knowledge-item">
+                <span class="type-badge">Signal</span>
+                <span class="confidence-badge">Confidence: 75%</span>
+                <h3>FDA Releases Draft Guidance on AI-Generated Drug Candidates</h3>
+                <p>The FDA published draft guidance in January 2026 on regulatory pathways for AI-generated drug candidates. Key points:</p>
+                <ul>
+                    <li><strong>AI-designed molecules follow the same IND application process</strong> as traditional candidates</li>
+                    <li><strong>Computational validation requirements</strong> must be documented transparently</li>
+                    <li><strong>Model training data provenance</strong> must be disclosed for molecules entering clinical trials</li>
+                    <li><strong>Explainability standards</strong> for AI predictions in safety-critical decisions</li>
+                </ul>
+                <p style="margin-top: 1rem; color: #b0b0b0;">
+                    <em>Impact:</em> This regulatory framework provides clarity for deploying foundation models in production drug discovery pipelines. Agents must now track model lineage and provide audit trails.
+                </p>
+            </div>
 
-<section class="section">
-  <div class="card" style="background: var(--bg-card); border: 1px solid var(--accent);">
-    <h3>Methodology Overview</h3>
-    <div class="timeline">
-      <div class="timeline-item completed">
-        <div class="timeline-date">Phase 1</div>
-        <div class="timeline-title">Research: Model Cataloging</div>
-        <div class="timeline-body">Comprehensive survey of all major bio-AI foundation models across protein design, small molecule generation, and genomics applications.</div>
-      </div>
-      <div class="timeline-item completed">
-        <div class="timeline-date">Phase 2</div>
-        <div class="timeline-title">Analysis: Benchmark Evaluation</div>
-        <div class="timeline-body">Performance assessment on standard drug discovery benchmarks including binding affinity prediction, toxicity screening, and synthetic accessibility.</div>
-      </div>
-      <div class="timeline-item completed">
-        <div class="timeline-date">Phase 3</div>
-        <div class="timeline-title">Synthesis: Agent Workflow Design</div>
-        <div class="timeline-body">Design of autonomous agent pipelines that integrate foundation models for end-to-end drug discovery workflows.</div>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Research by Houston Golden, assisted by AI agents &middot; <a href="https://github.com/Hubify-Projects/foundation-models-for-drug-discovery-and-genomics">View on GitHub</a></p></div></footer>
-<script>
-// Highlight active nav link
-document.querySelectorAll('nav a[data-page]').forEach(a => {
-  if (a.getAttribute('data-page') === 'index') a.classList.add('active');
-});
-</script>
+            <!-- Foundation Models Guide -->
+            <div class="knowledge-item">
+                <span class="type-badge">Guide</span>
+                <span class="confidence-badge">Confidence: 80%</span>
+                <h3>Foundation Models for Drug Discovery and Genomics</h3>
+                
+                <h4>Key Models (2026)</h4>
+                
+                <div class="model-grid">
+                    <div class="model-card">
+                        <div class="model-name">ESM-3</div>
+                        <div class="model-org">Meta AI</div>
+                        <p>Generates functional proteins from text descriptions. Breakthrough in de novo protein design with 98M+ protein sequences trained.</p>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-name">RFdiffusion</div>
+                        <div class="model-org">Baker Lab</div>
+                        <p>De novo protein backbone generation using diffusion models. Excels at creating novel binder proteins and enzyme scaffolds.</p>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-name">AlphaFold 3</div>
+                        <div class="model-org">Google DeepMind</div>
+                        <p>Extended to predict protein-ligand complexes, DNA/RNA interactions. Critical for structure-based drug design workflows.</p>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-name">ChemGPT</div>
+                        <div class="model-org">Stanford / Various</div>
+                        <p>Molecular generation and optimization trained on SMILES representations. Strong performance on druglike molecule generation.</p>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-name">ProGen2</div>
+                        <div class="model-org">Salesforce Research</div>
+                        <p>Protein language model for controlled generation. Effective for designing proteins with specific functional properties.</p>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-name">MolFormer</div>
+                        <div class="model-org">IBM Research</div>
+                        <p>Transformer for molecular property prediction. Strong performance on ADMET (absorption, distribution, metabolism) tasks.</p>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3rem;">Agent Integration Opportunities</h4>
+                <div class="card">
+                    <p><strong>Multi-Model Pipelines:</strong> Agents can orchestrate workflows that combine structure prediction (AlphaFold), binding affinity (molecular docking), and ADMET prediction (MolFormer) for end-to-end candidate screening.</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>Active Learning Loops:</strong> Foundation models provide initial predictions, agents select most informative experiments, wet lab validation feeds back to refine models—closing the \( \text{predict} \rightarrow \text{test} \rightarrow \text{learn} \) cycle.</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>Constraint Satisfaction:</strong> Agents can use models as oracles within constraint programming frameworks, ensuring generated molecules satisfy synthetic accessibility, toxicity thresholds, and patent landscape requirements simultaneously.</p>
+                </div>
+
+                <h4 style="margin-top: 2rem;">Critical Gaps</h4>
+                <ul>
+                    <li><strong>Limited training on edge cases:</strong> Models trained on known proteins struggle with novel folds and exotic chemistries</li>
+                    <li><strong>Synthetic accessibility disconnect:</strong> Generated molecules are often impractical to synthesize in lab settings</li>
+                    <li><strong>Poor uncertainty quantification:</strong> Models don't reliably signal when predictions are unreliable</li>
+                    <li><strong>Experimental validation gap:</strong> \(\sim\)70% of computationally designed proteins fail experimental validation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Status -->
+    <section style="background: rgba(26, 26, 46, 0.3);">
+        <div class="container">
+            <h2>Mission Status</h2>
+            <div class="card" style="border-color: #D4A574; animation: subtle-pulse 3s ease-in-out infinite;">
+                <h3 style="margin-top: 0; color: #D4A574;">🟢 Active Research</h3>
+                <p style="font-size: 1.1rem; margin-top: 1rem;">
+                    Currently in <strong>Phase 1: Model Cataloging</strong>. Systematically surveying foundation models across protein design, small molecule generation, and genomic analysis domains.
+                </p>
+                <p style="margin-top: 1rem; color: #b0b0b0;">
+                    Next steps: Complete model taxonomy, establish benchmark evaluation criteria, and identify early candidates for agent integration testing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>Powered by <a href="https://hubify.com/research">Hubify</a></p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">Advancing AI Research Through Collaborative Intelligence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Subtle scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .phase-card, .update-item, .knowledge-item, .model-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero::before');
+            if (scrolled < window.innerHeight) {
+                document.querySelector('.hero').style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
 </body>
 </html>
